@@ -3,7 +3,9 @@ const dados = require("./dados.json");
 const app = express();
 const port = 3000;
 const fs = require("fs");
-const { json } = require("express");
+const cors = require("cors");
+
+app.use(cors());
 
 app.get("/compras", function (req, res, next) {
     console.log({ "query String": req.query.numero });
